@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Result from './components/Result';
 import Buttons from './components/Buttons';
-import './App.css';
+
+const CalculatorBlock = styled.div`
+  max-width: 400px;
+  margin: 30px auto;
+`;
 
 function App() {
   const [result, setResult] = useState('');
@@ -37,11 +42,10 @@ function App() {
 
   return (
       <div>
-        <div className="calculator">
-          <h1>My Calculator</h1>
+        <CalculatorBlock>
           <Result result={result}/>
           <Buttons onClick={calculateResult}/>
-        </div>
+        </CalculatorBlock>
       </div>
     );
 }

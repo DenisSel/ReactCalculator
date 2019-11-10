@@ -1,19 +1,26 @@
-import React, {Component} from 'react';
+import React from 'react';
+import styled from 'styled-components';
 
-class ResultComponent extends Component {
+const ResultBlock = styled.div`
+  height: 60px;
+  background-color: #000000;
+  width: 100%;
+  border: 1px solid #08f50a;
+`;
+const Paragraph = styled.p`
+  font-size: 40px;
+  margin: 5px;
+  color: #08f50a;
+`;
 
-
-    render() {
-        let {result} = this.props;
-        return (
-            <div className="result">
-                <p>{result}</p>
-            </div>
-    )
-        ;
-    }
+function Result(props) {
+  return (
+    <ResultBlock>
+      <Paragraph>{props.result}</Paragraph>
+    </ResultBlock>
+  );
 }
 
 
-export default ResultComponent;
+export default Result;
 
